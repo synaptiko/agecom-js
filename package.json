@@ -21,7 +21,7 @@
     "gulp-csso": "0.2.2",
     "gulp-util": "2.2.12",
     "autoquit": "0.1.4",
-    "systemd": "0.2.6",
+    "systemd": "0.2.6"
   },
   "engines": {
     "node": ">=0.10"
