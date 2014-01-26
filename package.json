@@ -13,12 +13,14 @@
   },
   "dependencies": {
     "visualphp-proxy": "git://github.com/synaptiko/visualphp-proxy.git",
-    "mime": "~1.2.11",
-    "gulp": "~3.5.0",
-    "gulp-csso": "0.1.7",
-    "gulp-uglify": "0.1.0",
+    "mime": "1.2.11",
+    "gulp": "3.5.0",
     "gulp-concat": "2.1.7",
-    "gulp-clean": "0.2.2"
+    "gulp-clean": "0.2.4",
+    "gulp-uglify": "0.2.0",
+    "gulp-csso": "0.2.2",
+    "autoquit": "0.1.4",
+    "systemd": "0.2.6"
   },
   "engines": {
     "node": ">=0.10"

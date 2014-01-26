@@ -1,3 +1,6 @@
+require('systemd');
+require('autoquit');
+
 var path = require('path');
 var fs = require('fs');
 var mime = require('mime');
@@ -9,6 +12,7 @@ var proxy = new VisualPhpProxy({
   hostname: 'agecom.dynamic-software.cz',
   minimizeHtml: useBuild
 });
+proxy.server.autoQuit({ timeOut: 5 * 60 }); // 5 minutes
 
 var urlPrefix = 'http://' + proxy.hostname;
 
@@ -102,4 +106,9 @@ function respondWithLocalFile(requestPath, response) {
   }
 }
 
-proxy.listen(process.env.AGECOM_PROXY_PORT || 8000, 'localhost');
+if (process.env.NODE_ENV === 'production') {
+  proxy.listen('systemd');
+}
+else {
+  proxy.listen(8000, 'localhost');
+}
